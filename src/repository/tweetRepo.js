@@ -38,10 +38,20 @@ class TweetRepository {
         }
     }
 
-    getWithCommentsa= async(id) => {
+    getWithComments= async(id) => {
         try {
-            const tweet = await Tweet.findById(id).populate({path:'comments'});
+            const tweet = await Tweet.findById(id).populate({path:'comments'}).lean();
             return tweet;
+        } catch (error) {
+            throw error;
+        }
+    }
+    getAll = async(limit, offset)=>{
+        try {
+
+            const tweet = await Tweet.find().skip(offset).limit(limit);
+            return tweet;
+            
         } catch (error) {
             throw error;
         }
