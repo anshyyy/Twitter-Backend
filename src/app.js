@@ -15,19 +15,6 @@ const setUpandStartServer = async ()=> {
         console.log(`Server Started at ${PORT}`);
 
         await connect();
-        // const tweet = await tweetRepo.create({
-        //     content :"hello with comment",
-        //      userEmail : "a@ddcsxcvcqsqx.com"
-        // });
-        // console.log(tweet);
-        // const comment = await commentRepo.create({
-        //     content:"comment"
-        // });
-        // console.log(comment);
-        // await tweet.comments.push(comment);
-        // await tweet.save();
-        // console.log(tweet);
-        
  
     });
 }
